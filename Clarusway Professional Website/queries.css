@@ -1,0 +1,252 @@
+@media only screen and (max-width: 1200px) {
+  header {
+    height: 8vh;
+  }
+  .subscribe {
+    top: 7.9vh;
+    height: 8vh;
+  }
+  h1 {
+    font-size: 4.5rem;
+  }
+  .form-a input {
+    width: 15vw;
+  }
+
+  .form-a input:focus {
+    width: 20vw;
+  }
+  .form-a button {
+    width: 7vw;
+  }
+  #home {
+    padding: 4rem 2rem;
+  }
+  label {
+    display: inline-block;
+    padding-bottom: 0.5rem;
+  }
+  .left {
+    width: 65%;
+  }
+  .right {
+    width: 35%;
+    height: 30vh;
+  }
+  .left2 {
+    width: 60%;
+  }
+  .right-2 {
+    height: 38vh;
+    width: 34%;
+  }
+  #services {
+    padding: 2.5rem;
+    height: 75vh;
+  }
+  #services h4 {
+    padding: 0.5rem 0;
+    font-size: 1.8rem;
+  }
+  #services .website h4 {
+    padding: 2.5rem 0;
+  }
+  .website {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .website p {
+    padding-bottom: 2rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  header {
+    height: 6vh;
+  }
+  p {
+    font-size: 1.3rem;
+  }
+  .subscribe {
+    top: 5.9vh;
+    height: 6vh;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  h3 {
+    font-size: 1.8rem;
+  }
+  .professional {
+    height: 40vh;
+  }
+  .professional p {
+    font-size: 1.4rem;
+  }
+  .form-a button {
+    width: 8vw;
+    font-size: 1rem;
+  }
+  #home {
+    padding: 8rem 1.5rem 0;
+    gap: 1rem;
+  }
+  #home p {
+    font-size: 1.4rem;
+  }
+  #home h4 {
+    font-size: 1.8rem;
+  }
+  #home img {
+    width: 20%;
+  }
+  #sec {
+    margin-bottom: 10vh;
+  }
+  #about {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    height: 85vh;
+  }
+  .left {
+    width: 100%;
+  }
+  .right {
+    width: 100%;
+    height: 25vh;
+  }
+  .left2 {
+    width: 100%;
+  }
+  .right-2 {
+    width: 100%;
+    height: fit-content;
+  }
+  #services {
+    flex-direction: column;
+    padding: 1.2rem;
+    height: 90vh;
+    justify-content: left;
+    gap: 1rem;
+  }
+  #services h4 {
+    padding: 0.5rem 0;
+    font-size: 1.6rem;
+  }
+  #services .website h4 {
+    padding: 0.5rem 0;
+  }
+  #about .right h4 {
+    font-size: 1.6rem;
+  }
+  .website {
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .website p {
+    padding-bottom: 1rem;
+  }
+  .form-b div {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+  a {
+    font-size: 1.1rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .subscribe {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  .professional {
+    height: 35vh;
+  }
+  .professional p {
+    font-size: 1.2rem;
+  }
+  .form-a input {
+    width: 30vw;
+    height: 2rem;
+  }
+
+  .form-a input:focus {
+    width: 40vw;
+  }
+  .form-a button {
+    width: 20vw;
+    height: 2rem;
+    transform: translateY(-1px);
+  }
+  #home {
+    padding: 1rem 0.5rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  #home p {
+    font-size: 1.2rem;
+  }
+  #home h4 {
+    font-size: 1.4rem;
+    padding: 0.5rem 0;
+  }
+  #home img {
+    width: 15%;
+  }
+  #about h4 {
+    font-size: 1.4rem;
+    padding: 1rem 0;
+  }
+  #services {
+    padding: 1rem;
+    height: 85vh;
+    gap: 0.5rem;
+  }
+  #services h4 {
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
+  }
+  #services .website h4 {
+    padding: 0.5rem 0;
+  }
+  .website {
+    padding-left: 0.5rem;
+  }
+  .website p {
+    padding-bottom: 0.5rem;
+  }
+  .form-b div {
+    width: 80%;
+  }
+  .form-b {
+    gap: 0.5rem;
+  }
+  label {
+    padding: 0;
+  }
+  #about .right h4 {
+    font-size: 1.4rem;
+  }
+}
