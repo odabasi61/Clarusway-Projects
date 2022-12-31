@@ -8,11 +8,21 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="queries.css" />
     <link rel="shortcut icon" href="img/cw.jpg" type="image/x-icon" />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
     <header>
       <div class="header-left">
-        <h2><span>Clarusway</span> Web Design</h2>
+        <h2>
+          <a href="#"><span>Clarusway</span></a> Web Design
+        </h2>
       </div>
       <div class="header-right">
         <nav>
@@ -181,12 +191,26 @@
         </form>
       </div>
     </section>
-
+    <div class="popup hidden">
+      <div class="assist-image">
+        <img src="img/assist.png" alt="" />
+        <span>Hello</span>
+      </div>
+      <p>I'm your assistant. How can i help you?</p>
+      <div class="text">
+        <textarea class="assist-inp" name="" id=""></textarea>
+        <button type="submit">Send</button>
+      </div>
+    </div>
+    <button>
+      <ion-icon class="assistant" name="chatbox-ellipses-outline"></ion-icon>
+    </button>
     <footer>
       <p class="footer">Clarusway Web Design, Copyright &copy; 2020</p>
       <div class="footer-image">
         <img src="img/clarusway_logo.png" alt="clarusway logo" />
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

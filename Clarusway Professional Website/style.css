@@ -223,6 +223,7 @@ h3 {
   background-color: #e6e6e6;
   padding-left: 2rem;
   margin-bottom: 1rem;
+  box-shadow: 1rem 1rem 1rem rgb(0, 0, 0, 0.3);
 }
 
 .website p {
@@ -239,6 +240,7 @@ h3 {
 .right-2 {
   height: fit-content;
   width: 25%;
+  box-shadow: 1rem 1rem 1rem rgb(0, 0, 0, 0.3);
 }
 
 .form-b input {
@@ -271,6 +273,85 @@ textarea {
   background-color: wheat;
   color: #e84910;
   cursor: pointer;
+}
+
+.assistant {
+  width: 6rem;
+  height: 6rem;
+  color: #e84910;
+  position: fixed;
+  z-index: 10;
+  bottom: 15vh;
+  right: 8vh;
+  transition: all 0.3s;
+}
+
+.assistant:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.popup {
+  background-color: rgb(232, 73, 16, 0.7);
+  width: 20vh;
+  height: 25vh;
+  position: fixed;
+  bottom: 22vh;
+  right: 2vh;
+  display: inline;
+  text-align: center;
+  color: #e6e6e6;
+}
+.popup span {
+  color: #e6e6e6;
+}
+.popup p {
+  padding-bottom: 1rem;
+  font-size: 90%;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.text button {
+  width: 3vw;
+  color: #e6e6e6;
+  background-color: #e84910;
+  border: none;
+  transition: all 0.3s;
+  font-size: 90%;
+  border-radius: 5px;
+}
+
+.text button:hover {
+  background-color: wheat;
+  color: #e84910;
+  cursor: pointer;
+}
+
+.assist-image {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.assist-image img {
+  border-radius: 50%;
+  width: 50%;
+}
+
+.assist-inp {
+  width: 80%;
+  height: 5vh;
 }
 
 footer {
