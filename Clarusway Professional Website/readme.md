@@ -1,4 +1,4 @@
-In this small project i performed positioning spects in css
+In this small project i performed positioning specs in css
 
 https://odabasi61.github.io/Clarusway-Projects/Clarusway%20Professional%20Website/#
 
