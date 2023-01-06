@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IOS Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div id="clock"></div>
+        <nav>
+          <ion-icon class="icon" name="cellular"></ion-icon>
+          <ion-icon class="icon" name="wifi"></ion-icon>
+          <ion-icon class="icon" name="battery-half"></ion-icon>
+        </nav>
+      </header>
+      <div class="inp">
+        <input class="display" type="text" value="0" />
+      </div>
+      <div class="buttons">
+        <button class="grey-light ac" type="button" value="clear">AC</button>
+        <button class="grey-light pm" type="button" value="+/-">
+          &plusmn;
+        </button>
+        <button class="grey-light percent" type="button" value="%">%</button>
+        <button class="orng division" type="button" value="/">÷</button>
+        <button class="grey-dark nums" type="button" value="7">7</button>
+        <button class="grey-dark nums" type="button" value="8">8</button>
+        <button class="grey-dark nums" type="button" value="9">9</button>
+        <button class="orng multiply" type="button" value="*">x</button>
+        <button class="grey-dark nums" type="button" value="4">4</button>
+        <button class="grey-dark nums" type="button" value="5">5</button>
+        <button class="grey-dark nums" type="button" value="6">6</button>
+        <button class="orng minus" type="button" value="-">-</button>
+        <button class="grey-dark nums" type="button" value="1">1</button>
+        <button class="grey-dark nums" type="button" value="2">2</button>
+        <button class="grey-dark nums" type="button" value="3">3</button>
+        <button class="orng add" type="button" value="+">+</button>
+        <button class="grey-dark expand" type="button" value="0">0</button>
+        <button class="grey-dark dot" type="button" value=".">.</button>
+        <button class="grey-dark equal" type="button" value="=">=</button>
+      </div>
+    </div>
+  </body>
+</html>
