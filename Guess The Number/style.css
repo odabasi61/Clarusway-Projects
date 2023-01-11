@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+    90deg,
+    rgba(240, 143, 107) 0%,
+    rgba(189, 198, 200) 100%
+  );
+}
+
+header {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.section1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+}
+
+.sec1-left,
+.sec1-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15vh;
+}
+
+.check {
+  width: 5vw;
+  height: 2.2rem;
+  border: none;
+  border-radius: 5px;
+  margin: 0 auto 2rem;
+  background-color: #452944;
+  color: wheat;
+}
+
+.check:hover {
+  cursor: pointer;
+}
+
+input {
+  width: 5vw;
+  height: 4rem;
+  font-size: 3rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+  outline: none;
+}
+
+.attempt {
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+
+.last {
+  font-size: 1.3rem;
+  color: crimson;
+}
+
+.sec1-middle {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+}
+
+img {
+  width: 60%;
+}
+
+h3 {
+  width: 100%;
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+  font-size: 2rem;
+  transform: translateX(-50%);
+}
+
+.message {
+  padding-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+.score {
+  padding-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+.again {
+  width: 8vw;
+  height: 3rem;
+  background-color: #141114;
+  color: wheat;
+  border: none;
+  border-radius: 5px;
+}
+
+.again:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .anime {
+    width: 80%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  .check {
+    width: 8.5vw;
+    margin-bottom: 1rem;
+  }
+  input {
+    width: 9vw;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .sec1-left,
+  .sec1-right {
+    padding-top: 8vh;
+  }
+  .attempt,
+  .last {
+    font-size: 1.1rem;
+  }
+  .sec1-right p {
+    font-size: 1.1rem;
+    padding-bottom: 1rem;
+  }
+  .again {
+    width: 10vw;
+    height: 2rem;
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .anime {
+    display: none;
+  }
+  .section1 {
+    display: flex;
+    flex-direction: column;
+  }
+  .sec1-left {
+    padding: 0;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .check {
+    width: 30vw;
+    height: 3rem;
+    margin-bottom: 2rem;
+  }
+  input {
+    width: 25vw;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .sec1-right {
+    padding-top: 3vh;
+  }
+  .again {
+    width: 25vw;
+    height: 3rem;
+    margin-top: 1rem;
+  }
+}

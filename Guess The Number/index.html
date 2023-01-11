@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Guess The Number (1 - 20)</h1>
+    </header>
+    <main>
+      <section class="section1">
+        <div class="sec1-left">
+          <button class="check">Check</button>
+          <input type="number" name="number" id="number" />
+          <p class="attempt">
+            Number of attempts: <span class="current-attempt">5</span>
+          </p>
+          <p class="last hidden">Your last chance</p>
+        </div>
+
+        <div class="sec1-middle">
+          <div>
+            <img class="hidden" src="guess.png" alt="congrats" /><img
+              class="anime"
+              src="cute.gif"
+              alt="anime"
+            />
+          </div>
+          <h3 class="hidden">🎉 You are the winner 🎉</h3>
+        </div>
+
+        <div class="sec1-right">
+          <p class="message">Start Guessing...</p>
+          <p class="score">💯 Score: <span class="current-score">10</span></p>
+          <button type="reset" class="again">Try Again</button>
+        </div>
+      </section>
+      <section class="section2"></section>
+      <section class="section3"></section>
+    </main>
+  </body>
+</html>
