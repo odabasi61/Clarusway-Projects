@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Guess the Number</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
   </head>
   <body>
     <header>
@@ -16,32 +15,56 @@
       <section class="section1">
         <div class="sec1-left">
           <button class="check">Check</button>
-          <input type="number" name="number" id="number" />
-          <p class="attempt">
-            Number of attempts: <span class="current-attempt">5</span>
+          <input type="number" class="guess" min="1" max="20" />
+          <p class="current-attempt">
+            Number of attempts: <span class="attempt">5</span>
           </p>
           <p class="last hidden">Your last chance</p>
         </div>
 
         <div class="sec1-middle">
           <div>
-            <img class="hidden" src="guess.png" alt="congrats" /><img
+            <img class="congrats hidden" src="guess.png" alt="congrats" /><img
               class="anime"
               src="cute.gif"
               alt="anime"
             />
           </div>
-          <h3 class="hidden">🎉 You are the winner 🎉</h3>
+          <h3 class="winner hidden">🎉 You are the winner 🎉</h3>
         </div>
 
         <div class="sec1-right">
           <p class="message">Start Guessing...</p>
-          <p class="score">💯 Score: <span class="current-score">10</span></p>
-          <button type="reset" class="again">Try Again</button>
+          <p class="current-score">💯 Score: <span class="score">5</span></p>
+          <button class="again">Try Again</button>
         </div>
       </section>
-      <section class="section2"></section>
-      <section class="section3"></section>
+      <section class="section2">
+        <div class="pop-up">
+          <button class="close-modal">&times;</button>
+          <h4>Rules of the Game</h4>
+          <nav>
+            <ul>
+              <li>A random number is selected by the game between 1 and 20</li>
+              <li>The player is supposed to guess the number</li>
+              <li>
+                If the player guess smaller number than the secret number, then
+                they are warned to increase their guess.
+              </li>
+              <li>
+                If the player guess bigger number than the secret number, then
+                they are warned to decrease their guess.
+              </li>
+              <li>
+                Everytime the player makes worng guess, they lose 1 point.
+              </li>
+            </ul>
+          </nav>
+          <div><button class="got">Got it 💪</button></div>
+        </div>
+        <div class="overlay"></div>
+      </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

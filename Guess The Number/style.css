@@ -5,6 +5,7 @@
 }
 
 body {
+  position: relative;
   width: 100%;
   height: 100vh;
   background-image: linear-gradient(
@@ -41,9 +42,6 @@ header {
   margin: 0 auto 2rem;
   background-color: #452944;
   color: wheat;
-}
-
-.check:hover {
   cursor: pointer;
 }
 
@@ -56,7 +54,7 @@ input {
   outline: none;
 }
 
-.attempt {
+.current-attempt {
   font-size: 1.4rem;
   padding-bottom: 1rem;
 }
@@ -81,9 +79,20 @@ h3 {
   width: 100%;
   position: absolute;
   bottom: 5rem;
-  left: 50%;
-  font-size: 2rem;
+  /* left: 50%; */
+  font-size: 1.7rem;
   transform: translateX(-50%);
+  animation: scale 1s infinite alternate linear;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.3);
+  }
 }
 
 .message {
@@ -91,7 +100,7 @@ h3 {
   font-size: 1.4rem;
 }
 
-.score {
+.current-score {
   padding-bottom: 2rem;
   font-size: 1.4rem;
 }
@@ -103,10 +112,68 @@ h3 {
   color: wheat;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
-.again:hover {
+.pop-up {
+  width: 60%;
+  height: fit-content;
+  padding: 2vh 3vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  background-color: rgb(206, 195, 195);
+  color: #444;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #333;
   cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.pop-up h4 {
+  font-size: 1.8rem;
+  padding: 2vh 0;
+}
+
+.pop-up li {
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+}
+
+.got {
+  width: 8vw;
+  height: 3rem;
+  background-color: #141114;
+  color: wheat;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pop-up div {
+  text-align: center;
+  padding: 2vh 0 0;
 }
 
 .hidden {
@@ -114,11 +181,26 @@ h3 {
 }
 
 @media only screen and (max-width: 1000px) {
+  .pop-up {
+    width: 80%;
+  }
+  .pop-up h4 {
+    font-size: 1.6rem;
+  }
+  .pop-up li {
+    font-size: 1.2rem;
+  }
+  .got {
+    width: 12vw;
+  }
   .anime {
     width: 80%;
   }
   h1 {
     font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.1rem;
   }
   .check {
     width: 8.5vw;
@@ -133,7 +215,7 @@ h3 {
   .sec1-right {
     padding-top: 8vh;
   }
-  .attempt,
+  .current-attempt,
   .last {
     font-size: 1.1rem;
   }
@@ -149,6 +231,20 @@ h3 {
 }
 
 @media only screen and (max-width: 600px) {
+  .pop-up {
+    width: 90%;
+    height: fit-content;
+    padding: 2vh 5vh;
+  }
+  .pop-up h4 {
+    font-size: 1.4rem;
+  }
+  .pop-up li {
+    font-size: 1.1rem;
+  }
+  .got {
+    width: 20vw;
+  }
   .anime {
     display: none;
   }
@@ -162,6 +258,9 @@ h3 {
   h1 {
     font-size: 1.5rem;
   }
+  h3 {
+    font-size: 1.3rem;
+  }
   .check {
     width: 30vw;
     height: 3rem;
@@ -173,7 +272,7 @@ h3 {
     margin-bottom: 2rem;
   }
   .sec1-right {
-    padding-top: 3vh;
+    padding: 3vh 0;
   }
   .again {
     width: 25vw;
