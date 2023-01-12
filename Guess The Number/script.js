@@ -22,10 +22,12 @@ document.addEventListener("keydown", function (e) {
 });
 
 // game
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
 const winner = document.querySelector(".winner");
 const congrats = document.querySelector(".congrats");
 const anime = document.querySelector(".anime");
+const last = document.querySelector('.last');
+console.log(secretNumber);
 
 let attempt = 5;
 let score = 5;
@@ -81,10 +83,13 @@ document.querySelector(".again").addEventListener("click", function () {
   if (!congrats.classList.contains('hidden')) {
     congrats.classList.add('hidden');
   }
-  else if (!winner.classList.contains('hidden')) {
+  if (!winner.classList.contains('hidden')) {
     winner.classList.add('hidden');
   }
-  else if (anime.classList.contains('hidden')) {
+  if (anime.classList.contains('hidden')) {
     anime.classList.remove('hidden');
+  }
+  if (!last.classList.contains('hidden')) {
+    last.classList.add('hidden');
   }
 });
