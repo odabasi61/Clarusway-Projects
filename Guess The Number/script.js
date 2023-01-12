@@ -55,16 +55,17 @@ document.querySelector(".check").addEventListener("click", function () {
       attempt--;
       document.querySelector(".score").textContent = score;
       document.querySelector(".attempt").textContent = attempt;
-      if (attempt === 2) {
+      if (attempt === 1) {
         document.querySelector(".last").classList.remove("hidden");
       }
-    }
+    
   } else {
     displayMessage("💥 You lost the game!");
     document.querySelector(".score").textContent = 0;
     document.querySelector(".attempt").textContent = 'sorry!';
     document.querySelector(".last").classList.add("hidden");
-  }
+    }
+    }
 });
 
 document.querySelector(".again").addEventListener("click", function () {
