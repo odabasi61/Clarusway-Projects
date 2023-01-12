@@ -49,20 +49,21 @@ document.querySelector(".check").addEventListener("click", function () {
   }
   // if player is wrong
   else if (guess !== secretNumber) {
-    if (score > 1 && attempt > 1) {
+    if (score > 1) {
       displayMessage(guess > secretNumber ? "📈 Too high!" : "📉 Too low!");
       score--;
       attempt--;
       document.querySelector(".score").textContent = score;
       document.querySelector(".attempt").textContent = attempt;
-      // if (attempt > 0 && attempt < 2) {
-      //   document.querySelector(".last").classList.remove("hidden");
-      // }
+      if (attempt === 2) {
+        document.querySelector(".last").classList.remove("hidden");
+      }
     }
-  } else if (score === 1 && attempt === 1) {
+  } else {
     displayMessage("💥 You lost the game!");
     document.querySelector(".score").textContent = 0;
-    document.querySelector(".attempt").textContent = 0;
+    document.querySelector(".attempt").textContent = 'sorry!';
+    document.querySelector(".last").classList.add("hidden");
   }
 });
 
@@ -75,4 +76,14 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".score").textContent = score;
   document.querySelector(".attempt").textContent = attempt;
   document.querySelector(".guess").value = "";
+
+  if (!congrats.classList.contains('hidden')) {
+    congrats.classList.add('hidden');
+  }
+  else if (!winner.classList.contains('hidden')) {
+    winner.classList.add('hidden');
+  }
+  else if (anime.classList.contains('hidden')) {
+    anime.classList.remove('hidden');
+  }
 });
