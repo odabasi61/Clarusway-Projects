@@ -23,16 +23,6 @@ setInterval(updateClock, 1000);
 
 // CALCULATION FUNCTIONS
 
-// const display = document.querySelector(".display");
-// const ac = document.querySelector(".ac");
-// const nums = document.querySelector(".nums");
-
-// display.textContent = 0;
-
-// ac.addEventListener("click", function () {
-//   display.textContent = 0;
-// });
-
-// nums.addEventListener("click", function () {
-//   display.textContent = Number(result.value);
-// });
+let display = document.querySelector(".display");
+const ac = document.querySelector(".ac");
+const nums = document.querySelectorAll(".nums");
