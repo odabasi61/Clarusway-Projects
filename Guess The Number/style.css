@@ -100,7 +100,8 @@ h3 {
   font-size: 1.4rem;
 }
 
-.current-score {
+.current-score,
+.label-highscore {
   padding-bottom: 2rem;
   font-size: 1.4rem;
 }

@@ -26,11 +26,12 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 const winner = document.querySelector(".winner");
 const congrats = document.querySelector(".congrats");
 const anime = document.querySelector(".anime");
-const last = document.querySelector('.last');
+const last = document.querySelector(".last");
 console.log(secretNumber);
 
 let attempt = 5;
 let score = 5;
+let highscore = 0;
 
 const displayMessage = function (message) {
   document.querySelector(".message").textContent = message;
@@ -48,6 +49,10 @@ document.querySelector(".check").addEventListener("click", function () {
     winner.classList.remove("hidden");
     congrats.classList.remove("hidden");
     anime.classList.add("hidden");
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(".highscore").textContent = highscore;
+    }
   }
   // if player is wrong
   else if (guess !== secretNumber) {
@@ -60,14 +65,13 @@ document.querySelector(".check").addEventListener("click", function () {
       if (attempt === 1) {
         document.querySelector(".last").classList.remove("hidden");
       }
-    
-  } else {
-    displayMessage("💥 You lost the game!");
-    document.querySelector(".score").textContent = 0;
-    document.querySelector(".attempt").textContent = 'sorry!';
-    document.querySelector(".last").classList.add("hidden");
+    } else {
+      displayMessage("💥 You lost the game!");
+      document.querySelector(".score").textContent = 0;
+      document.querySelector(".attempt").textContent = "sorry!";
+      document.querySelector(".last").classList.add("hidden");
     }
-    }
+  }
 });
 
 document.querySelector(".again").addEventListener("click", function () {
@@ -80,16 +84,16 @@ document.querySelector(".again").addEventListener("click", function () {
   document.querySelector(".attempt").textContent = attempt;
   document.querySelector(".guess").value = "";
 
-  if (!congrats.classList.contains('hidden')) {
-    congrats.classList.add('hidden');
+  if (!congrats.classList.contains("hidden")) {
+    congrats.classList.add("hidden");
   }
-  if (!winner.classList.contains('hidden')) {
-    winner.classList.add('hidden');
+  if (!winner.classList.contains("hidden")) {
+    winner.classList.add("hidden");
   }
-  if (anime.classList.contains('hidden')) {
-    anime.classList.remove('hidden');
+  if (anime.classList.contains("hidden")) {
+    anime.classList.remove("hidden");
   }
-  if (!last.classList.contains('hidden')) {
-    last.classList.add('hidden');
+  if (!last.classList.contains("hidden")) {
+    last.classList.add("hidden");
   }
 });
