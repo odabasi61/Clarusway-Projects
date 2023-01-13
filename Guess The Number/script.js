@@ -29,7 +29,7 @@ const anime = document.querySelector(".anime");
 const last = document.querySelector(".last");
 console.log(secretNumber);
 
-let attempt = 5;
+let attempt = 0;
 let score = 5;
 let highscore = 0;
 
@@ -59,10 +59,10 @@ document.querySelector(".check").addEventListener("click", function () {
     if (score > 1) {
       displayMessage(guess > secretNumber ? "📈 Too high!" : "📉 Too low!");
       score--;
-      attempt--;
+      attempt++;
       document.querySelector(".score").textContent = score;
       document.querySelector(".attempt").textContent = attempt;
-      if (attempt === 1) {
+      if (attempt === 4) {
         document.querySelector(".last").classList.remove("hidden");
       }
     } else {
@@ -75,7 +75,7 @@ document.querySelector(".check").addEventListener("click", function () {
 });
 
 document.querySelector(".again").addEventListener("click", function () {
-  attempt = 5;
+  attempt = 0;
   score = 5;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 
