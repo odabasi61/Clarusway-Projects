@@ -87,7 +87,18 @@ footer.middle {
     padding-right: 0.7rem;
   }
   .nav .nav__link {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
+  }
+  .home h2 {
+    font-size: 1.4rem;
+    padding-bottom: 0.5rem;
+  }
+  .home h1 {
+    font-size: 1.8rem;
+  }
+  footer a,
+footer .copyright {
+    font-size: 0.8rem;
   }
   .contact h2 {
     font-size: 2rem;
@@ -111,6 +122,17 @@ footer.middle {
   .nav .nav__link {
     font-size: 1rem;
   }
+  .home h2 {
+    font-size: 1.6rem;
+    padding-bottom: 0.5rem;
+  }
+  .home h1 {
+    font-size: 2.2rem;
+  }
+  footer a,
+footer .copyright {
+    font-size: 1rem;
+  }
   .contact h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
@@ -130,6 +152,17 @@ footer.middle {
   .projects__item {
     width: 100%;
   }
+  .home h2 {
+    font-size: 1.7rem;
+    padding-bottom: 1rem;
+  }
+  .home h1 {
+    font-size: 2.7rem;
+  }
+  footer a,
+footer .copyright {
+    font-size: 1.2rem;
+  }
 }
 @media screen and (min-width: 1024px) {
   .nav__item {
@@ -137,6 +170,17 @@ footer.middle {
   }
   .nav .nav__link {
     font-size: 1.5rem;
+  }
+  .home h1 {
+    font-size: 3.7rem;
+  }
+  .home h2 {
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  footer a,
+footer .copyright {
+    font-size: 1.3rem;
   }
   .projects__item {
     width: 50%;
@@ -148,6 +192,13 @@ footer.middle {
 @media screen and (min-width: 1600px) {
   .projects__item {
     width: 33%;
+  }
+  .home h1 {
+    font-size: 5rem;
+  }
+  .home h2 {
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
   }
 }
 .about-bgImg-container {
