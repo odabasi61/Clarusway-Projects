@@ -14,11 +14,44 @@
 }
 
 footer.horizontal {
-  // border: 2px solid red;
   height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   padding: 1rem;
+  @extend .link-style;
+}
+
+footer.vertical {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2rem;
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 1rem;
+    @extend .link-style;
+  }
+
+  .copyright {
+    position: fixed;
+    bottom: 1rem;
+    right: 3rem;
+    // transform: rotate(90deg) translate(-3rem, -5rem);
+    writing-mode: vertical-lr;
+  }
+}
+
+footer.middle {
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
   @extend .link-style;
 }
