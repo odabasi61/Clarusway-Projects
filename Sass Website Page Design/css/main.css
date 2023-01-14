@@ -265,7 +265,6 @@ footer.middle {
 }
 .contact__list {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -303,7 +302,7 @@ footer.middle {
 }
 
 .project-bgImg-container {
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   background: linear-gradient(to right, rgba(39, 39, 39, 0.9), rgba(39, 39, 39, 0.3)), url("../img/model-1.jpg");
   background-position: center center;
