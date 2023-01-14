@@ -40,7 +40,9 @@ const displayMessage = function (message) {
 document.querySelector(".check").addEventListener("click", function () {
   const guess = Number(document.querySelector(".guess").value);
   // if there is no input
-  if (!guess) {
+  if (guess < 1 || guess > 20) {
+    alert("Number must be between 1 and 20!");
+  } else if (!guess) {
     displayMessage("⛔️ No number!");
   }
   // if player wins
@@ -70,6 +72,7 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".score").textContent = 0;
       document.querySelector(".attempt").textContent = "sorry!";
       document.querySelector(".last").classList.add("hidden");
+      document.querySelector(".check").disabled = true;
     }
   }
 });
