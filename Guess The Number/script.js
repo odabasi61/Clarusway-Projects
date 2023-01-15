@@ -51,6 +51,7 @@ document.querySelector(".check").addEventListener("click", function () {
     winner.classList.remove("hidden");
     congrats.classList.remove("hidden");
     anime.classList.add("hidden");
+    document.querySelector(".check").disabled = true;
     if (score > highscore) {
       highscore = score;
       document.querySelector(".highscore").textContent = highscore;
