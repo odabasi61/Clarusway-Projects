@@ -6,8 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do List</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
+    <div class="container">
+      <h1>To-Do List</h1>
+
+      <section>
+        <div class="to-do">
+          <form action="">
+            <input
+              class="note"
+              type="text"
+              placeholder="Add new to-do to your list"
+            />
+          </form>
+
+          <div class="buttons">
+            <button class="add">Add</button>
+          </div>
+
+          <div class="result">
+            <p>Total: <span class="total">0</span></p>
+            <p>Completed: <span class="completed">0</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section2">
+        <ul></ul>
+      </section>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>

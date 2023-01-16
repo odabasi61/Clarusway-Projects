@@ -3,3 +3,115 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 90vh;
+  background-color: #530909;
+  font-family: "Satisfy", cursive, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 1vh;
+  font-size: 5rem;
+}
+
+.container {
+  background-color: #e9e9c8;
+  margin: 5vh 10vw;
+  height: 90vh;
+  border-radius: 0.5rem;
+}
+
+section {
+  height: 20vh;
+}
+
+.section2 {
+  height: 60vh;
+  margin: 0 auto;
+  width: 60vw;
+  /* overflow: scroll; */
+}
+
+.to-do {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 60vw;
+  height: 100%;
+  gap: 1rem;
+}
+
+input {
+  width: 20vw;
+  height: 5vh;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  padding-left: 1rem;
+}
+
+.add {
+  border: none;
+  cursor: pointer;
+  background-color: #51cf66;
+  border-radius: 0.3rem;
+  width: 5vw;
+  height: 5vh;
+  transition: all 0.2s;
+  font-size: 1.3rem;
+}
+
+.add:hover {
+  transform: translateY(-2px);
+}
+
+.add:focus {
+  transform: translateY(0);
+}
+
+.result p {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+li {
+  background-color: #cce4e6;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  margin-bottom: 1rem;
+}
+
+li:nth-child(even) {
+  background-color: #e7e1e4;
+}
+
+.red {
+  color: red;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.green {
+  color: #51cf66;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.red:hover {
+  opacity: 0.5;
+}
+
+.draw {
+  text-decoration: line-through;
+  color: #333;
+}
