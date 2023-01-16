@@ -1,24 +1,5 @@
 "use strict";
 
-// worst practice
-// const yourChoice = document.getElementById("your-choice");
-
-// const stoneImage = document.querySelector(".stone");
-// const paperImage = document.querySelector(".paper");
-// const scissorImage = document.querySelector(".scissor");
-
-// stoneImage.addEventListener("click", () => {
-//   yourChoice.innerHTML = `<img src='./assets/stone.png'></img>`;
-// });
-
-// paperImage.addEventListener("click", () => {
-//   yourChoice.innerHTML = `<img src='./assets/paper.png'></img>`;
-// });
-
-// scissorImage.addEventListener("click", () => {
-//   yourChoice.innerHTML = `<img src='./assets/scissor.png'></img>`;
-// });
-
 const yourChoice = document.getElementById("your-choice");
 const select = document.querySelector(".select");
 const pcChoice = document.getElementById("pc-choice");
@@ -28,6 +9,7 @@ let pcRandom; // pc choice
 // to write the score
 const scoreYou = document.getElementById("you");
 const scorePc = document.getElementById("pc");
+const domTopScore = document.querySelector(".top-score");
 
 // modal selectors:
 const resultDiv = document.querySelector(".result-msg");
@@ -43,6 +25,7 @@ select.addEventListener("click", (e) => {
   // console.log(e.target.className);
   // console.log(e.target.getAttribute("alt")); by using target we get it on the console. both these work here.
   if (e.target.getAttribute("alt")) {
+    // to avoid to get null
     userSelect = e.target.getAttribute("alt");
     yourChoice.innerHTML = `<img src='./assets/${userSelect}.png'></img>`;
     pc();
@@ -53,7 +36,8 @@ const pcArr = ["stone", "paper", "scissor"];
 
 // pc is making choice:
 function pc() {
-  pcRandom = pcArr[Math.floor(Math.random() * 3)];
+  // pcRandom = pcArr[Math.floor(Math.random() * 3)];
+  pcRandom = "stone";
   pcChoice.innerHTML = `<img src='./assets/${pcRandom}.png'></img>`;
   result();
 }
@@ -95,10 +79,15 @@ function result() {
     resultDiv.style.backgroundColor = "#FFC538";
   }
 
-  if (scoreYou.innerText == 10) {
+  if (scoreYou.innerText == "10") {
     final.innerHTML = `💃 You Win🕺`;
     document.querySelector(".modal").style.backgroundColor = "#5AB7AC";
     modalBtn.style.color = "#5AB7AC";
+    topScoreCheck();
+  }
+
+  if (scorePc.innerText == "10" || scoreYou.innerText == "10") {
+    modal();
   }
 }
 
@@ -116,4 +105,33 @@ function win() {
   containerEl.style.boxShadow = "3px 3px 10px 1px #5AB7AC";
   resultDiv.style.backgroundColor = "#5AB7AC";
   scoreYou.innerText++;
+}
+
+function modal() {
+  modalEl.classList.add("show");
+}
+
+modalBtn.addEventListener("click", () => {
+  modalEl.style.display = "none";
+  window.location.reload();
+});
+
+// get highscore from local storage
+let storagedScore = localStorage.getItem("highScore");
+let topScore; // the value which will be displayed on screen
+
+// if localstorage is empty (0 - 0)
+if (storagedScore) {
+  topScore = `10 - ${storagedScore}`;
+} else {
+  topScore = `0 - 0`;
+}
+
+domTopScore.innerText = topScore;
+
+function topScoreCheck() {
+  storagedScore || localStorage.setItem("highScore", +scorePc.innerText);
+  if (storagedScore >= scorePc.innerText) {
+    localStorage.setItem("highScore", +scorePc.innerText);
+  }
 }
