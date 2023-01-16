@@ -6,72 +6,77 @@ let completed = 0;
 const note = document.querySelector(".note");
 const add = document.querySelector(".add");
 const ul = document.querySelector("ul");
-const li = document.querySelector("li");
 const totalNotes = document.querySelector(".total");
 const totalCompleted = document.querySelector(".completed");
 
 add.addEventListener("click", () => {
-  !note.value
-    ? alert("Please write down your note.")
-    : (ul.innerHTML += `<li><ion-icon class='red check'  name="checkmark-outline"></ion-icon><p class='par'>${note.value}</p><ion-icon class='red delete' name="trash-outline"></ion-icon></li>`);
-  note.value = "";
-  note.focus();
-  total++;
-  totalNotes.textContent = total;
+  if (!note.value) {
+    alert("Please write down your note.");
+  } else {
+    total++;
+    totalNotes.textContent = total;
+
+    // if (total == 10) {
+    //   document.querySelector(".section2").classList.add("scroll");
+    // }
+
+    // we create the list item here
+    const li = document.createElement("li");
+
+    // we create check button and set it attributes
+    const check = document.createElement("i");
+    check.setAttribute("id", "check");
+    check.setAttribute("class", "fa fa-check fa-lg");
+
+    // we created the note here
+    const par = document.createElement("p");
+    par.setAttribute("id", "par");
+    par.innerText = note.value;
+
+    // we create the delete button here
+    const del = document.createElement("i");
+    del.setAttribute("id", "del");
+    del.setAttribute("class", "fa fa-trash fa-lg");
+
+    li.appendChild(check);
+    li.appendChild(par);
+    li.appendChild(del);
+    ul.appendChild(li);
+
+    note.value = "";
+    note.focus();
+  }
+  checkButton();
+  deleteButton();
 });
 
 // delete and complete functions
+function checkButton() {
+  document.querySelectorAll(".fa-check").forEach((c) => {
+    c.onclick = () => {
+      if (c.parentElement.classList.contains("checked")) {
+        c.parentElement.classList.remove("checked");
 
-// assignments to keys in keyboard
-
-note.addEventListener("keydown", (e) => {
-  if (e.code === "Enter") {
-    add.click();
-  }
-  if (e.code === "Escape") {
-    note.value = "";
-  }
-});
-
-{
-  /* <html>
-  <body>
-    <h1>To-Do List</h1>
-    <form>
-      <input type="text" id="task" placeholder="Enter a task...">
-      <button type="button" onclick="addTask()">Add Task</button>
-    </form>
-    <ul id="todo-list"></ul>
-
-    <script>
-      function addTask() {
-        // Get the task input
-        var task = document.getElementById("task").value;
-
-        // Create a new list item
-        var todoItem = document.createElement("li");
-        todoItem.innerHTML = task;
-
-        // Create checkbox
-        var checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        todoItem.appendChild(checkbox);
-
-        // Create delete button
-        var deleteBtn = document.createElement("button");
-        deleteBtn.innerHTML = "Delete";
-        deleteBtn.onclick = function() {
-          todoItem.remove();
-        };
-        todoItem.appendChild(deleteBtn);
-
-        // Add the new task to the to-do list
-        document.getElementById("todo-list").appendChild(todoItem);
-
-        // Clear the task input
-        document.getElementById("task").value = "";
+        completed = completed - 1;
+      } else {
+        c.parentElement.classList.add("checked");
+        completed++;
+        totalCompleted.textContent = completed;
       }
-    </script>
-  </body>
-</html> */
+    };
+  });
+}
+
+function deleteButton() {
+  document.querySelectorAll(".fa-trash").forEach((d) => {
+    d.onclick = () => {
+      d.parentElement.remove();
+      total--;
+      totalNotes.textContent = total;
+      if (d.parentElement.classList.contains("checked")) {
+        completed--;
+        totalCompleted.textContent = completed;
+      }
+    };
+  });
 }

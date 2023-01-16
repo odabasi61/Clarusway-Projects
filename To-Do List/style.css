@@ -35,8 +35,12 @@ section {
   height: 60vh;
   margin: 0 auto;
   width: 60vw;
-  /* overflow: scroll; */
+  overflow: auto;
 }
+
+/* .scroll {
+  overflow: scroll;
+} */
 
 .to-do {
   display: flex;
@@ -57,10 +61,15 @@ input {
   padding-left: 1rem;
 }
 
+input::placeholder {
+  font-family: "Satisfy", cursive, sans-serif;
+}
+
 .add {
   border: none;
   cursor: pointer;
   background-color: #51cf66;
+  font-family: "Satisfy", cursive, sans-serif;
   border-radius: 0.3rem;
   width: 5vw;
   height: 5vh;
@@ -95,23 +104,81 @@ li:nth-child(even) {
   background-color: #e7e1e4;
 }
 
-.red {
+i {
   color: red;
   cursor: pointer;
-  font-weight: bold;
 }
 
-.green {
-  color: #51cf66;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.red:hover {
+i:hover {
   opacity: 0.5;
 }
 
-.draw {
+li.checked > .fa-check {
+  color: #51cf66;
+}
+
+li.checked > p {
+  color: rgb(41, 41, 41);
   text-decoration: line-through;
-  color: #333;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .add {
+    font-size: 1.1rem;
+    width: 8vw;
+  }
+
+  input {
+    width: 25vw;
+  }
+
+  input::placeholder {
+    font-size: 1.3rem;
+  }
+
+  .result p {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+  }
+
+  li {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .add {
+    font-size: 1rem;
+    width: 10vw;
+  }
+
+  input {
+    width: 40vw;
+  }
+
+  input::placeholder {
+    font-size: 1.1rem;
+  }
+
+  .to-do {
+    flex-wrap: wrap;
+  }
+
+  .result p {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  li {
+    font-size: 1.2rem;
+  }
 }
