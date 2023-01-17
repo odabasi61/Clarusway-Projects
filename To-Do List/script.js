@@ -8,17 +8,16 @@ const add = document.querySelector(".add");
 const ul = document.querySelector("ul");
 const totalNotes = document.querySelector(".total");
 const totalCompleted = document.querySelector(".completed");
-
+const isEmpty = (str) => !str.trim().length;
 add.addEventListener("click", () => {
   if (!note.value) {
     alert("Please write down your note.");
+  } else if (isEmpty(note.value)) {
+    note.value = "";
+    alert("Please do not leave the line blank.");
   } else {
     total++;
     totalNotes.textContent = total;
-
-    // if (total == 10) {
-    //   document.querySelector(".section2").classList.add("scroll");
-    // }
 
     // we create the list item here
     const li = document.createElement("li");
@@ -56,8 +55,8 @@ function checkButton() {
     c.onclick = () => {
       if (c.parentElement.classList.contains("checked")) {
         c.parentElement.classList.remove("checked");
-        completed--;
-        totalCompleted.textContent = completed;
+
+        completed = completed - 1;
       } else {
         c.parentElement.classList.add("checked");
         completed++;
