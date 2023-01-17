@@ -9,6 +9,7 @@ const ul = document.querySelector("ul");
 const totalNotes = document.querySelector(".total");
 const totalCompleted = document.querySelector(".completed");
 const isEmpty = (str) => !str.trim().length;
+
 add.addEventListener("click", () => {
   if (!note.value) {
     alert("Please write down your note.");
@@ -55,8 +56,8 @@ function checkButton() {
     c.onclick = () => {
       if (c.parentElement.classList.contains("checked")) {
         c.parentElement.classList.remove("checked");
-
-        completed = completed - 1;
+        completed--;
+        totalCompleted.textContent = completed;
       } else {
         c.parentElement.classList.add("checked");
         completed++;
@@ -84,7 +85,6 @@ note.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     e.preventDefault(); // if we didnt use this code, the page reloads whenever we press enter
     add.click();
-    note.value = "";
   }
   if (e.code === "Delete") {
     note.value = "";
