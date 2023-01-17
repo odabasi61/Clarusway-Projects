@@ -23,7 +23,7 @@ add.addEventListener("click", () => {
     // we create the list item here
     const li = document.createElement("li");
 
-    // we create check button and set it attributes
+    // we create check button and set its attributes
     const check = document.createElement("i");
     check.setAttribute("id", "check");
     check.setAttribute("class", "fa fa-check fa-lg");
@@ -56,8 +56,8 @@ function checkButton() {
     c.onclick = () => {
       if (c.parentElement.classList.contains("checked")) {
         c.parentElement.classList.remove("checked");
-
-        completed = completed - 1;
+        completed--;
+        totalCompleted.textContent = completed;
       } else {
         c.parentElement.classList.add("checked");
         completed++;
@@ -80,3 +80,14 @@ function deleteButton() {
     };
   });
 }
+
+note.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault(); // if we didnt use this code, the page reloads whenever we press enter
+    add.click();
+    note.value = "";
+  }
+  if (e.code === "Delete") {
+    note.value = "";
+  }
+});
