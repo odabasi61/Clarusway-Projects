@@ -8,6 +8,7 @@ let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 
 window.addEventListener("load", () => {
   getTodoListFromLocalStorage();
+  document.querySelector(".note").focus();
 });
 
 const getTodoListFromLocalStorage = () => {
