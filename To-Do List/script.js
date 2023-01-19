@@ -1,92 +1,91 @@
 "use strict";
 
-let total = 0;
-let completed = 0;
-
-const note = document.querySelector(".note");
 const add = document.querySelector(".add");
-const ul = document.querySelector("ul");
-const totalNotes = document.querySelector(".total");
-const totalCompleted = document.querySelector(".completed");
-const isEmpty = (str) => !str.trim().length;
+const todoInput = document.querySelector(".note");
+const todoUl = document.getElementById("todo-ul");
 
-add.addEventListener("click", () => {
-  if (!note.value) {
-    alert("Please write down your note.");
-  } else if (isEmpty(note.value)) {
-    note.value = "";
-    alert("Please do not leave the line blank.");
-  } else {
-    total++;
-    totalNotes.textContent = total;
+let todoList = JSON.parse(localStorage.getItem("todoList")) || [];
 
-    // we create the list item here
-    const li = document.createElement("li");
-
-    // we create check button and set its attributes
-    const check = document.createElement("i");
-    check.setAttribute("id", "check");
-    check.setAttribute("class", "fa fa-check fa-lg");
-
-    // we created the note here
-    const par = document.createElement("p");
-    par.setAttribute("id", "par");
-    par.innerText = note.value;
-
-    // we create the delete button here
-    const del = document.createElement("i");
-    del.setAttribute("id", "del");
-    del.setAttribute("class", "fa fa-trash fa-lg");
-
-    li.appendChild(check);
-    li.appendChild(par);
-    li.appendChild(del);
-    ul.appendChild(li);
-
-    note.value = "";
-    note.focus();
-  }
-  checkButton();
-  deleteButton();
+window.addEventListener("load", () => {
+  getTodoListFromLocalStorage();
 });
 
-// delete and complete functions
-function checkButton() {
-  document.querySelectorAll(".fa-check").forEach((c) => {
-    c.onclick = () => {
-      if (c.parentElement.classList.contains("checked")) {
-        c.parentElement.classList.remove("checked");
-        completed--;
-        totalCompleted.textContent = completed;
-      } else {
-        c.parentElement.classList.add("checked");
-        completed++;
-        totalCompleted.textContent = completed;
-      }
-    };
+const getTodoListFromLocalStorage = () => {
+  todoList.forEach((todo) => {
+    createTodo(todo);
   });
-}
+};
 
-function deleteButton() {
-  document.querySelectorAll(".fa-trash").forEach((d) => {
-    d.onclick = () => {
-      d.parentElement.remove();
-      total--;
-      totalNotes.textContent = total;
-      if (d.parentElement.classList.contains("checked")) {
-        completed--;
-        totalCompleted.textContent = completed;
-      }
-    };
-  });
-}
-
-note.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault(); // if we didnt use this code, the page reloads whenever we press enter
-    add.click();
+add.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (todoInput.value.trim() === "") {
+    alert("Please do not leave the line blank!");
+    return;
   }
-  if (e.code === "Delete") {
-    note.value = "";
+  const newTodo = {
+    id: new Date().getTime(),
+    completed: false,
+    text: todoInput.value,
+  };
+  createTodo(newTodo);
+  todoList.push(newTodo);
+  localStorage.setItem("todoList", JSON.stringify(todoList));
+  e.target.closest("form").reset();
+});
+
+const createTodo = (newTodo) => {
+  //! Todo item creation
+  //* Object destructring
+
+  const { id, completed, text } = newTodo;
+
+  // create li
+  const li = document.createElement("li");
+  li.setAttribute("id", id);
+
+  //* add class with completed (status)
+  completed ? li.classList.add("checked") : "";
+
+  // create check icon
+  const icon = document.createElement("i");
+  icon.setAttribute("class", "fas fa-check");
+  li.append(icon);
+
+  // create item text
+  const p = document.createElement("p");
+  p.innerText = text;
+  li.appendChild(p);
+
+  // create remove item
+  const removeIcon = document.createElement("i");
+  removeIcon.setAttribute("class", "fas fa-trash");
+  li.append(removeIcon);
+
+  todoUl.append(li);
+};
+
+todoUl.addEventListener("click", (e) => {
+  const idAttr = e.target.closest("li").getAttribute("id");
+  if (e.target.classList.contains("fa-check")) {
+    e.target.parentElement.classList.toggle("checked");
+
+    // update the array
+    todoList.map((todo) => {
+      if (todo.id == idAttr) {
+        todo.completed = !todo.completed;
+      }
+    });
+    // add updated array to storage
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  } else if (e.target.classList.contains("fa-trash")) {
+    // remove from UI
+    e.target.parentElement.remove();
+
+    // remove from array
+    // filter the elements whose id is not deleted and update the list
+    todoList = todoList.filter((todo) => todo.id != idAttr);
+
+    // add updated array to localStorage 👇
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   }
 });
