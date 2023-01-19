@@ -8,6 +8,100 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>Checkout</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="product">
+          <div class="photo">
+            <img src="img/photo1.png" alt="Vintage Backpack" />
+          </div>
+          <div class="info">
+            <h3>Vintage Backpack</h3>
+            <div class="price">
+              <span class="span1">$25.98</span>
+              <span class="span2">$34.99</span>
+            </div>
+            <form action="">
+              <button class="minus">-</button>
+              <input type="text" id="quantity" value="1" />
+              <button class="plus">+</button>
+            </form>
+            <button class="remove">Remove</button>
+            <div class="ptotal">
+              <p>Product Total: $</p>
+              <span class="stotal"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="photo">
+            <img src="img/photo2.png" alt="Levi Shoes" />
+          </div>
+          <div class="info">
+            <h3>Levi Shoes</h3>
+            <div class="price">
+              <span class="span1">$45.99</span>
+              <span class="span2">$54.99</span>
+            </div>
+            <form action="">
+              <button class="minus">-</button>
+              <input type="text" id="quantity" value="1" />
+              <button class="plus">+</button>
+            </form>
+            <button class="remove">Remove</button>
+            <div class="ptotal">
+              <p>Product Total: $</p>
+              <span class="stotal"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product">
+          <div class="photo">
+            <img src="img/photo3.jpg" alt="Antique Clock" />
+          </div>
+          <div class="info">
+            <h3>Antique Clock</h3>
+            <div class="price">
+              <span class="span1">$74.99</span>
+              <span class="span2">$94.99</span>
+            </div>
+            <form action="">
+              <button class="minus">-</button>
+              <input type="text" id="quantity" value="1" />
+              <button class="plus">+</button>
+            </form>
+            <button class="remove">Remove</button>
+            <div class="ptotal">
+              <p>Product Total: $</p>
+              <span class="stotal"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-total">
+        <div class="subtotal">
+          <span class="left">Subtotal</span>
+          <span class="right">$</span>
+        </div>
+        <div class="subtotal">
+          <span class="left">Tax (18%)</span>
+          <span class="right">$</span>
+        </div>
+        <div class="subtotal">
+          <span class="left">Shipping</span>
+          <span class="right">$</span>
+        </div>
+        <div class="subtotal">
+          <span class="left">Total</span>
+          <span class="right">$</span>
+        </div>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>

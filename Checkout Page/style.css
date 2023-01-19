@@ -3,3 +3,216 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  width: 100%;
+  background-color: darkslategray;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  padding: 3rem 0;
+  font-size: 4rem;
+}
+
+main {
+  width: 60%;
+  height: fit-content;
+  background-color: rgb(239, 239, 231);
+  margin: 0 auto 5rem;
+  border-radius: 10px;
+}
+
+.product {
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.photo {
+  width: 35%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.price {
+  padding-bottom: 3vh;
+}
+
+.span1 {
+  color: orange;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.span2 {
+  text-decoration: line-through;
+}
+
+img {
+  border-radius: 1rem;
+  width: 100%;
+}
+
+form {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  margin-bottom: 1vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10vw;
+}
+
+form button {
+  background-color: grey;
+  border: none;
+  border-radius: 0.2rem;
+  width: 2vw;
+  height: 3vh;
+  cursor: pointer;
+}
+
+#quantity {
+  width: 20%;
+  border: none;
+  text-align: center;
+  background-color: rgb(239, 239, 231);
+}
+
+.remove {
+  width: 20%;
+  background-color: brown;
+  color: white;
+  margin-bottom: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.ptotal,
+.stotal,
+.main-total {
+  font-size: 1.4rem;
+}
+
+.main-total {
+  padding: 2rem;
+}
+
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    width: 80%;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+  .span1 {
+    font-size: 1.4rem;
+  }
+  .span2 {
+    font-size: 0.8rem;
+  }
+  form {
+    width: 15vw;
+  }
+  .ptotal,
+  .stotal,
+  .main-total {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  main {
+    width: 90%;
+  }
+  h1 {
+    font-size: 2.5rem;
+    padding: 2rem 0;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  .span1 {
+    font-size: 1.2rem;
+  }
+  .span2 {
+    font-size: 0.7rem;
+  }
+  form {
+    width: 20vw;
+  }
+  form button {
+    width: 4vw;
+    height: 4vh;
+  }
+  .ptotal,
+  .stotal,
+  .main-total {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  main {
+    width: 70%;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  .span1 {
+    font-size: 1.3rem;
+  }
+  .span2 {
+    font-size: 0.8rem;
+  }
+  form {
+    width: 20vw;
+    padding: 0.5rem;
+  }
+  form button {
+    width: 4vw;
+    height: 4vh;
+  }
+  .product {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .photo,
+  .info {
+    width: 100%;
+    align-items: center;
+  }
+  .ptotal,
+  .stotal,
+  .main-total {
+    font-size: 1.2rem;
+  }
+  .remove {
+    width: 50%;
+  }
+}
