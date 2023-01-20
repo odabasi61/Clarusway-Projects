@@ -50,7 +50,8 @@ h3 {
   padding-bottom: 3vh;
 }
 
-.span1 {
+.span1,
+.spanx {
   color: orange;
   font-size: 1.6rem;
   font-weight: bold;
@@ -130,7 +131,8 @@ form button {
   h3 {
     font-size: 1.6rem;
   }
-  .span1 {
+  .span1,
+  .spanx {
     font-size: 1.4rem;
   }
   .span2 {
@@ -157,7 +159,8 @@ form button {
   h3 {
     font-size: 1.3rem;
   }
-  .span1 {
+  .span1,
+  .spanx {
     font-size: 1.2rem;
   }
   .span2 {
@@ -184,7 +187,8 @@ form button {
   h3 {
     font-size: 1.4rem;
   }
-  .span1 {
+  .span1,
+  .spanx {
     font-size: 1.3rem;
   }
   .span2 {
