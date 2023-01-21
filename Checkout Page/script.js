@@ -17,19 +17,19 @@ container.addEventListener("click", function (e) {
       e.target.nextElementSibling.innerText--;
       account(e.target.closest(".info"));
 
-      // rem.classList.remove("hidden");
-      // setTimeout(() => {
-      //   rem.classList.add("hidden");
-      // }, 500);
+      rem.classList.remove("hidden");
+      setTimeout(() => {
+        rem.classList.add("hidden");
+      }, 500);
     }
   } else if (e.target.classList.contains("plus")) {
     e.target.previousElementSibling.innerText++;
     account(e.target.closest(".info"));
 
-    // add.classList.remove("hidden");
-    // setTimeout(() => {
-    //   add.classList.add("hidden");
-    // }, 500);
+    add.classList.remove("hidden");
+    setTimeout(() => {
+      add.classList.add("hidden");
+    }, 500);
   } else if (e.target.classList.contains("remove")) {
     e.target.closest(".product").remove();
     accountTotal();
