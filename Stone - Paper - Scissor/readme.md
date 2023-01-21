@@ -1,3 +1,4 @@
+in this classical game, i used basic javascript codes: querryselectors, switch case, classlist add/remove, manipulating elements etc...
 
 https://odabasi61.github.io/Clarusway-Projects/Stone%20-%20Paper%20-%20Scissor/
 
