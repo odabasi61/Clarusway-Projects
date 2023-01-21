@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    to right bottom,
+    rgb(211, 249, 216),
+    rgb(43, 138, 62)
+  );
+}
+
+.container {
+  width: 80%;
+  height: 80vh;
+  margin: 10vh auto;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+button {
+  width: 10vw;
+  height: 5vh;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  height: 5vh;
+  text-align: center;
+  width: 5vw;
+  border: none;
+  outline: none;
+  background-color: #53334d;
+  color: wheat;
+}
+
+.res {
+  margin-top: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+  button,
+  input {
+    font-size: 0.5rem;
+  }
+}

@@ -61,6 +61,27 @@ h3 {
   text-decoration: line-through;
 }
 
+.add,
+.rem {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  color: white;
+  width: fit-content;
+}
+
+.add {
+  background-color: rgb(70, 135, 70);
+}
+
+.rem {
+  background-color: red;
+}
+
+.hidden {
+  display: none;
+}
+
 img {
   border-radius: 1rem;
   width: 100%;

@@ -1,6 +1,8 @@
 "use script";
 
 const container = document.querySelector(".container");
+const add = document.querySelector(".add");
+const rem = document.querySelector(".rem");
 const taxRate = 0.18;
 let mltply;
 
@@ -14,10 +16,20 @@ container.addEventListener("click", function (e) {
     if (e.target.nextElementSibling.innerText > 0) {
       e.target.nextElementSibling.innerText--;
       account(e.target.closest(".info"));
+
+      // rem.classList.remove("hidden");
+      // setTimeout(() => {
+      //   rem.classList.add("hidden");
+      // }, 500);
     }
   } else if (e.target.classList.contains("plus")) {
     e.target.previousElementSibling.innerText++;
     account(e.target.closest(".info"));
+
+    // add.classList.remove("hidden");
+    // setTimeout(() => {
+    //   add.classList.add("hidden");
+    // }, 500);
   } else if (e.target.classList.contains("remove")) {
     e.target.closest(".product").remove();
     accountTotal();
