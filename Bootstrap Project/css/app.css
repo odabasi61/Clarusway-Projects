@@ -1,0 +1,64 @@
+:root {
+    --red:#dc3545;
+}
+
+/*! -------------- 1- NAVBAR ---------------- */
+
+.navbar-nav {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav-link {
+    transition: color .7s;
+}
+
+.nav-link:hover,
+.nav-link.active:hover {
+color: var(--red);
+}
+
+/*! ------------- 2- CAROUSEL --------------- */
+
+.carousel-item {
+    max-height: calc(100vh - 93px);
+}
+
+.carousel-caption .btn {
+    width: 7rem;
+    margin-bottom: 1rem;
+}
+
+.carousel-caption h5 {
+    color: var(--red);
+    font-size: 2.4rem;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+}
+
+.carousel-caption p {
+    font-weight: 600;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 1);
+}
+
+.carousel-caption {
+    bottom: 5rem;
+}
+
+.carousel-indicators button {
+background-color: var(--red) !important;
+padding: .1rem !important;
+width: 3rem !important;
+}
+
+/*! ------------ 3- ABOUT SECTION ----------- */
+
+/*! ------------- 4- INSTRUCTORS -------------*/
+
+/*! ----------- 4- STUDENTS SECTION ----------*/
+
+/*! ----------- 5- COURSES SECTION ----------- */
+
+/*! ----------- 6- CONTACT SECTION ------------ */
+
+/*! --------------- 7- FOOTER ----------------- */
