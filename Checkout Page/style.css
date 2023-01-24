@@ -7,6 +7,7 @@
 body {
   width: 100%;
   background-color: darkslategray;
+  position: relative;
 }
 
 header {
@@ -59,6 +60,29 @@ h3 {
 
 .span2 {
   text-decoration: line-through;
+}
+
+.add,
+.rem {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  color: white;
+  width: fit-content;
+  position: fixed;
+  top: 40%;
+  left: 60%;
+}
+
+.add {
+  background-color: rgb(70, 135, 70);
+}
+
+.rem {
+  background-color: red;
+}
+
+.hidden {
+  display: none;
 }
 
 img {
@@ -146,6 +170,10 @@ form button {
   .main-total {
     font-size: 1.2rem;
   }
+  .add,
+  .rem {
+    padding: 0.5rem 1rem;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -177,6 +205,10 @@ form button {
   .stotal,
   .main-total {
     font-size: 1rem;
+  }
+  .add,
+  .rem {
+    padding: 0.4rem;
   }
 }
 

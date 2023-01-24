@@ -36,8 +36,7 @@ const pcArr = ["stone", "paper", "scissor"];
 
 // pc is making choice:
 function pc() {
-  // pcRandom = pcArr[Math.floor(Math.random() * 3)];
-  pcRandom = "stone";
+  pcRandom = pcArr[Math.floor(Math.random() * 3)];
   pcChoice.innerHTML = `<img src='./assets/${pcRandom}.png'></img>`;
   result();
 }

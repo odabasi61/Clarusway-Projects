@@ -1,3 +1,4 @@
+this is my first to-do list work. in this project i performed local storage.
 
 https://odabasi61.github.io/Clarusway-Projects/To-Do%20List/
 
