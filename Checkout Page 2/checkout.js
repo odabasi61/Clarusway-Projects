@@ -2,6 +2,8 @@
 // const shippingPrice = 15;
 // const shippingFreePrice = 300;
 
+// first we form this part and include it in the localstorage then we can comment it. but when we open in in another browser these parts may not work and in this situation we will take it out of comments.
+
 window.addEventListener("load", () => {
   // localStorage.setItem("taxRate", taxRate);
   // localStorage.setItem("shippingPrice", shippingPrice);

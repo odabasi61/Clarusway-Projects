@@ -3,17 +3,23 @@
 const container = document.querySelector(".container");
 const add = document.querySelector(".add");
 const rem = document.querySelector(".rem");
-const taxRate = 0.18;
-let mltply;
+// const taxRate = 0.18;
+// const shippingPrice = 15;
+// const shippingFreePrice = 300;
+
+// once we put them in the local storage, we could comment them. but if it doesnt work in another browser, we can uncomment them.
 
 window.addEventListener("load", () => {
+  // localStorage.setItem("taxRate", taxRate);
+  // localStorage.setItem("shippingPrice", shippingPrice);
+  // localStorage.setItem("shippingFreePrice", shippingFreePrice);
   accountTotal();
 });
 
 container.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.classList.contains("minus")) {
-    if (e.target.nextElementSibling.innerText > 0) {
+    if (e.target.nextElementSibling.innerText > 1) {
       e.target.nextElementSibling.innerText--;
       account(e.target.closest(".info"));
 
@@ -21,7 +27,18 @@ container.addEventListener("click", function (e) {
       setTimeout(() => {
         rem.classList.add("hidden");
       }, 500);
+    } else {
+      if (
+        confirm(
+          `${
+            e.target.closest(".info").querySelector("h3").innerText
+          } will be removed!`
+        )
+      ) {
+        e.target.closest(".product").remove();
+      }
     }
+    accountTotal();
   } else if (e.target.classList.contains("plus")) {
     e.target.previousElementSibling.innerText++;
     account(e.target.closest(".info"));
@@ -31,28 +48,42 @@ container.addEventListener("click", function (e) {
       add.classList.add("hidden");
     }, 500);
   } else if (e.target.classList.contains("remove")) {
-    e.target.closest(".product").remove();
+    if (
+      confirm(
+        `${
+          e.target.closest(".info").querySelector("h3").innerText
+        } will be removed!`
+      )
+    ) {
+      e.target.closest(".product").remove();
+    }
     accountTotal();
   }
 });
 
-let account = (a) => {
-  let price = a.querySelector(".span1").innerText;
-  let quantity = a.querySelector("#quantity").innerText;
-  let result = +(price * quantity).toFixed(2);
+const account = (a) => {
+  const price = a.querySelector(".span1").innerText;
+  const quantity = a.querySelector("#quantity").innerText;
+  const result = +(price * quantity).toFixed(2);
   a.querySelector(".stotal").innerText = result;
   accountTotal();
 };
 
-let accountTotal = () => {
-  let allStotal = document.querySelectorAll(".stotal");
+const accountTotal = () => {
+  const allStotal = document.querySelectorAll(".stotal");
   let sumOfSubTotal = 0;
   allStotal.forEach((sttls) => {
     sumOfSubTotal += +sttls.innerText;
   });
 
-  let taxCost = sumOfSubTotal * taxRate;
-  let shippingCost = sumOfSubTotal > 20 ? 15.0 : 0;
+  const taxCost = sumOfSubTotal * localStorage.getItem("taxRate");
+  const shippingCost = parseFloat(
+    sumOfSubTotal > 0 &&
+      sumOfSubTotal < localStorage.getItem("shippingFreePrice")
+      ? localStorage.getItem("shippingPrice")
+      : 0
+  );
+  // here we could have used Number instead of parseFloat. they are the same.
 
   document.querySelector(".subt").innerText = sumOfSubTotal.toFixed(2);
   document.querySelector(".tax").innerText = taxCost.toFixed(2);
