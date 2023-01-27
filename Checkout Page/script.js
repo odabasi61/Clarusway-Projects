@@ -3,16 +3,16 @@
 const container = document.querySelector(".container");
 const add = document.querySelector(".add");
 const rem = document.querySelector(".rem");
-// const taxRate = 0.18;
-// const shippingPrice = 15;
-// const shippingFreePrice = 300;
+const taxRate = 0.18;
+const shippingPrice = 15;
+const shippingFreePrice = 300;
 
 // once we put them in the local storage, we could comment them. but if it doesnt work in another browser, we can uncomment them.
 
 window.addEventListener("load", () => {
-  // localStorage.setItem("taxRate", taxRate);
-  // localStorage.setItem("shippingPrice", shippingPrice);
-  // localStorage.setItem("shippingFreePrice", shippingFreePrice);
+  localStorage.setItem("taxRate", taxRate);
+  localStorage.setItem("shippingPrice", shippingPrice);
+  localStorage.setItem("shippingFreePrice", shippingFreePrice);
   accountTotal();
 });
 
