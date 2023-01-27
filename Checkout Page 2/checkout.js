@@ -1,13 +1,13 @@
-// const taxRate = 0.18;
-// const shippingPrice = 15;
-// const shippingFreePrice = 300;
+const taxRate = 0.18;
+const shippingPrice = 15;
+const shippingFreePrice = 300;
 
 // first we form this part and include it in the localstorage then we can comment it. but when we open in in another browser these parts may not work and in this situation we will take it out of comments.
 
 window.addEventListener("load", () => {
-  // localStorage.setItem("taxRate", taxRate);
-  // localStorage.setItem("shippingPrice", shippingPrice);
-  // localStorage.setItem("shippingFreePrice", shippingFreePrice);
+  localStorage.setItem("taxRate", taxRate);
+  localStorage.setItem("shippingPrice", shippingPrice);
+  localStorage.setItem("shippingFreePrice", shippingFreePrice);
 
   //show chart totals on window load!
   calculateCartPrice();
