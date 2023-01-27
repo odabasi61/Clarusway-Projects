@@ -49,6 +49,7 @@ setInterval(() => {
 }, 1000); // this function will be called every 1 second
 
 getWeatherData();
+
 function getWeatherData() {
   navigator.geolocation.getCurrentPosition((success) => {
     let { latitude, longitude } = success.coords;
