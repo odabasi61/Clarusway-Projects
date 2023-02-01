@@ -21,6 +21,7 @@ form.addEventListener("submit", (e) => {
 
 const getWeatherDataFromApi = async () => {
   const apiKey = DecryptStringAES(localStorage.getItem("apiKey"));
+  // yukarda local storage içinde şifreleyerek eklediğimiz api keyi burada deşifre edip ekliyoruz. başka ullanıcılar hala göremez.
   // console.log(apiKey);
   const cityName = input.value;
   const units = "metric";
@@ -64,6 +65,7 @@ const getWeatherDataFromApi = async () => {
     const createdLi = document.createElement("li");
     createdLi.classList.add("city");
     createdLi.innerHTML = `<li class="city">
+    <button class='exit'><i class="fa-regular fa-circle-xmark fa-2x"></i></button>
     <h2 class="city-name" data-name="${name}, ${sys.country}">
       <span>${name}</span>
       <sup>${sys.country}</sup>
@@ -74,6 +76,7 @@ const getWeatherDataFromApi = async () => {
       <figcaption>${weather[0].description}</figcaption>
     </figure>
 </li>`;
+
     // append - prepend
     list.prepend(createdLi);
   } catch (error) {
@@ -85,6 +88,12 @@ const getWeatherDataFromApi = async () => {
     }, 3000);
   }
 };
+
+// list.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("exit")) {
+//     e.target.parentElement.remove();
+//   }
+// });
 
 // capturing => parent to child
 // list.addEventListener('click', () => {
