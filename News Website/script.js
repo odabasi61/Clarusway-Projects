@@ -28,9 +28,11 @@ const renderNews = (news) => {
   // aşağıda sonuçlar çeşitli olabileceği için += kullandık
   news.forEach((item) => {
     const { title, description, urlToImage } = item;
-    newsDiv.innerHTML += `<img src='${urlToImage}' />
+    newsDiv.innerHTML += `<div class='newsCard'>
+    <img src='${urlToImage}' />
     <h5>${title}</h5>
-    <p>${description}</p>`;
+    <p>${description}</p>
+    </div>`;
   });
 };
 
