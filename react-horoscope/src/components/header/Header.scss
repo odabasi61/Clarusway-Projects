@@ -1,0 +1,44 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.header {
+  text-align: center;
+  padding: 1rem 0;
+
+  .text-shadow {
+    color: $secondaryColor;
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 0.2rem;
+    animation: flicker 0.5s ease-in-out infinite alternate;
+    transition: all 0.4s;
+
+    &:hover {
+      color: $cardNavBgColor;
+      cursor: pointer;
+    }
+  }
+
+  @keyframes flicker {
+    0% {
+      opacity: 0.5;
+      text-shadow: 2px 2px 10px $cardNavBgColor;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@include media-xsm {
+  .header {
+    margin-top: 15rem;
+  }
+}
+
+@include media-md {
+  .header {
+    margin-top: 7rem;
+  }
+}

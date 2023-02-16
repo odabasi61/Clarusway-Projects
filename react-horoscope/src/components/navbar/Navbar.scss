@@ -1,0 +1,51 @@
+@import "../../sass/variables";
+@import "../../sass/mixins";
+
+.navbar {
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $cardNavBgColor;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+
+  .links {
+    display: flex;
+    gap: 0.5rem;
+
+    a {
+      color: $secondaryColor;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.3rem;
+      padding: 0.5rem;
+      transition: all 0.4s;
+
+      &:hover {
+        background-color: $secondaryColor;
+        color: $cardNavBgColor;
+      }
+    }
+  }
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@include media-xsm {
+  .links {
+    flex-direction: column;
+  }
+}
+
+@include media-md {
+  .links {
+    flex-direction: row;
+  }
+}
