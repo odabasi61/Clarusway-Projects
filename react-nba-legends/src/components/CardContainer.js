@@ -3,11 +3,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { data } from "../helpers/data";
-import PlayerCard from "./PlayerCard";
 import { useState } from "react";
+import PlayerCard from "./PlayerCard";
+
 const CardContainer = () => {
   const [search, setSearch] = useState("");
-  console.log(search);
 
   return (
     <>
