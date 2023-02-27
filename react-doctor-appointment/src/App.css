@@ -5,6 +5,7 @@
   border-radius: 1rem;
   max-height: 130px;
 }
+
 .doctor-img:hover {
   transform: scale(1.03);
   border: 2px solid red;
@@ -27,6 +28,7 @@
 .consulted {
   border-left: 1rem solid rgb(166, 18, 189);
 }
+
 .consulted::after {
   content: "CONSULTED";
   background-color: rgb(166, 18, 189);
