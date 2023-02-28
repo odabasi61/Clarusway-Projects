@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.my-div {
+  background-color: rgb(247, 242, 242, 0.4);
+  border-radius: 1rem;
+  padding: 1rem;
+  min-width: 70%;
+  min-height: 50vh;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+h3 {
+  color: rgb(133, 90, 35);
+}
+
+.activeBtn {
+  color: rgb(220, 53, 69) !important;
+  border-bottom: 3px solid rgb(220, 53, 69) !important;
+}
+
+@media (min-width: 992px) {
+  .activeBtn {
+    border-bottom: 3px solid rgb(220, 53, 69) !important;
+    border-left: none !important;
+  }
+}
