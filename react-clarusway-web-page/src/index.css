@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.image {
+  background-image: url(./assets/images/showcase.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
