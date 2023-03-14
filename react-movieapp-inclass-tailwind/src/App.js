@@ -1,10 +1,15 @@
 import React from "react";
-import Register from "./pages/Register";
+import AuthContextProvider from "./context/AuthContext";
+import AppRouter from "./router/AppRouter";
+
+//appRouterı authcontextprovider ile sarmalladık. bu sayede children props yapılabiliyor. yani approuter burada children oluyor. authcontext içerisinde de onu karşılıyoruz.
 
 const App = () => {
   return (
     <div>
-      <Register />
+      <AuthContextProvider>
+        <AppRouter />
+      </AuthContextProvider>
     </div>
   );
 };
