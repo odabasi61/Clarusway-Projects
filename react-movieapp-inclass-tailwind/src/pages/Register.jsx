@@ -8,7 +8,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // createUser authContext ten çağrıldı. bu sayede handlesubmitte kullandık.
-  const { createUser } = useContext(AuthContext);
+  const { createUser, signUpProvider } = useContext(AuthContext);
 
   //* birleştirilmiş state
   // const [info, setInfo] = useState({
@@ -20,7 +20,8 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createUser(email, password);
+    const displayName = `${firstName} ${lastName}`;
+    createUser(email, password, displayName);
   };
 
   // const { email, password, firstName, lastName } = info;
@@ -85,6 +86,7 @@ const Register = () => {
           <button
             className="flex justify-between text-center btn-danger"
             type="button"
+            onClick={() => signUpProvider()}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />
