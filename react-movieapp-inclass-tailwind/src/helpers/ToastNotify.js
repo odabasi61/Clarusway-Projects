@@ -1,5 +1,7 @@
 import { toast } from "react-toastify";
 
+// toaster kütüphanesinde oluşturduğumuz alertler. sayfada ilgili yerlerde component olarak çağırarak kullanacağız. kullanırken fonksiyon parantezine string olarak mesajımızı yazıyoruz.
+
 export const toastWarnNotify = (msg) => {
   toast.warn(msg, {
     autoClose: 5000,

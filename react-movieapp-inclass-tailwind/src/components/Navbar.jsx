@@ -42,6 +42,7 @@ const Navbar = () => {
                   alt=""
                   loading="lazy"
                   referrerPolicy="no-referrer"
+                  // referrer kısmını eklememizin sebebi bazen profil resminde sorun oluyor. bu onu engeller.
                 />
               </span>
               <ul

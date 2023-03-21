@@ -20,6 +20,7 @@ const MovieContextProvider = ({ children }) => {
       .catch((err) => console.log(err))
       .finally(() => setLoading(false));
   };
+
   const values = { movies, getMovies, loading };
   return (
     <MovieContext.Provider value={values}>{children}</MovieContext.Provider>

@@ -39,7 +39,7 @@ const AuthContextProvider = ({ children }) => {
         email,
         password
       );
-      //? kullanıcı profilini güncellemek için kullanılan firebase metodu
+      //? kullanıcı profilini güncellemek için kullanılan firebase metodu. kullanıcı oluştururken email ve password parametreleri almıştı. kullaıcı adı için updateprofile ile display name ekledik (oluşturma aşamasında).
       await updateProfile(auth.currentUser, {
         displayName: displayName,
       });
@@ -68,8 +68,9 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const userObserver = () => {
-    //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu
+    //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu. bu metod herhangi bir yere çağrılmayacak. sayfa açıldığında direk çalışıyor olacak. o yüzden yukarıda useefect kullandık.
     onAuthStateChanged(auth, (user) => {
+      // user var ise bunları yap
       if (user) {
         const { email, displayName, photoURL } = user;
         setCurrentUser({ email, displayName, photoURL });
@@ -77,7 +78,9 @@ const AuthContextProvider = ({ children }) => {
           "user",
           JSON.stringify({ email, displayName, photoURL })
         );
-      } else {
+      }
+      // user yok ise bunları yap
+      else {
         setCurrentUser(false);
         sessionStorage.clear();
         // console.log("logged out");
@@ -86,11 +89,11 @@ const AuthContextProvider = ({ children }) => {
   };
 
   //* => Authentication => settings => Authorized domains => add domain
-  //! Projeyi deploy ettikten sonra google sign-in çalışması için domain listesine deploy linkini ekle
+  //! Projeyi deploy ettikten sonra google sign-in çalışması için domain listesine deploy linkini ekle ÖNEMLİİİİİİİİİİİ
   const signUpProvider = () => {
     //? Google ile giriş yapılması için kullanılan firebase metodu
     const provider = new GoogleAuthProvider();
-    //? Açılır pencere ile giriş yapılması için kullanılan firebase metodu
+    //? Açılır pencere ile giriş yapılması için kullanılan firebase metodu. içine auth ve provider alır. (then-catch ve try-catch benzer metotlardır. async await olsaydı try catch yapacaktık).
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log(result);
